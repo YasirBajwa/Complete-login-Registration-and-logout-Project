@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+  body
+  .bs-example
+  nav.navbar.navbar-expand-md.navbar-light.bg-light
+    a.navbar-brand(href='#') ProjectSite
+    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarCollapse')
+      span.navbar-toggler-icon
+    #navbarCollapse.collapse.navbar-collapse
+      .navbar-nav
+        if user
+         a.nav-item.nav-link(href='/') Members
+        if !user
+         a.nav-item.nav-link(href='/users/register') Register
+         a.nav-item.nav-link(href='/users/login') Login
+      .navbar-nav.ml-auto
+        if user
+          a.nav-item.nav-link(href='users/logout') Logout
+  
+  !=messages()
+  block content

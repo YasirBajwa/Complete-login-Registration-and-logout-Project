@@ -1,0 +1,14 @@
+extends layout
+
+block content
+ hr
+ .container
+  h2 Please login to Continue
+  form(method="post",action='/users/login')
+    .form-group
+      label(for='username') Username:
+      input#email.form-control(type='text', placeholder='Enter username', name='username') 
+    .form-group
+      label(for='pwd') Password:
+      input#pwd.form-control(type='password', placeholder='Enter password', name='password')
+    button.btn.btn-primary(type='submit',name="submit") Login 
